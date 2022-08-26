@@ -2,14 +2,15 @@ import nodemailer from 'nodemailer'
 
 
 const emailRegistro = async (datos) => {
+
+
     const transport = nodemailer.createTransport({
-        host: process.env.EMAIL_HOST,
-        port: process.env.EMAIL_PORT,
+        service: 'gmail',
         auth: {
-            user: process.env.EMAIL_USER,
-            pass: process.env.EMAIL_PASS
+            user: process.env.GMAIL_USER,
+            pass: process.env.GMAIL_APP_PASS
         }
-    });
+    })
 
     const { email, nombre, token } = datos
 
